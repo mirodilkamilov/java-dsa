@@ -52,24 +52,22 @@ public class SimpleSearchTest {
     @Test
     void testSearchAll_OneTargetExists() {
         String[] array = createTestArray();
-        Optional<List<Integer>> result = searchAll(array, "date");
-        assertTrue(result.isPresent());
-        assertEquals(List.of(4), result.get());
+        List<Integer> result = searchAll(array, "date");
+        assertEquals(List.of(4), result);
     }
 
     @Test
     void testSearchAll_MultipleTargetExists() {
         String[] array = createTestArray();
-        Optional<List<Integer>> result = searchAll(array, "banana");
-        assertTrue(result.isPresent());
-        assertEquals(2, result.get().size());
-        assertEquals(List.of(1, 3), result.get());
+        List<Integer> result = searchAll(array, "banana");
+        assertEquals(2, result.size());
+        assertEquals(List.of(1, 3), result);
     }
 
     @Test
     void testSearchAll_TargetDoesNotExists() {
         String[] array = createTestArray();
-        Optional<List<Integer>> result = searchAll(array, "Whatever");
+        List<Integer> result = searchAll(array, "Whatever");
         assertTrue(result.isEmpty());
     }
 
@@ -81,7 +79,7 @@ public class SimpleSearchTest {
     @Test
     void testSearchAll_ArrayIsEmpty() {
         String[] array = {};
-        Optional<List<Integer>> result = searchAll(array, "Whatever");
+        List<Integer> result = searchAll(array, "Whatever");
         assertTrue(result.isEmpty());
     }
 

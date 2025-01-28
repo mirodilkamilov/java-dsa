@@ -6,9 +6,7 @@ import java.util.Optional;
 
 public class SimpleSearch {
     public static Optional<Integer> searchFirst(String[] elements, String target) {
-        if (elements == null || target == null) {
-            throw new IllegalArgumentException("Array of elements or search target cannot be null");
-        }
+        validateInput(elements, target);
 
         for (int i = 0; i < elements.length; i++) {
             if (elements[i] == null) {
@@ -22,10 +20,8 @@ public class SimpleSearch {
         return Optional.empty();
     }
 
-    public static Optional<List<Integer>> searchAll(String[] elements, String target) {
-        if (elements == null || target == null) {
-            throw new IllegalArgumentException("Array of elements or search target cannot be null");
-        }
+    public static List<Integer> searchAll(String[] elements, String target) {
+        validateInput(elements, target);
 
         List<Integer> foundIndexes = new ArrayList<>();
         for (int i = 0; i < elements.length; i++) {
@@ -39,9 +35,15 @@ public class SimpleSearch {
         }
 
         if (foundIndexes.isEmpty()) {
-            return Optional.empty();
+            return List.of();
         }
 
-        return Optional.of(foundIndexes);
+        return foundIndexes;
+    }
+
+    private static void validateInput(String[] elements, String target) throws IllegalArgumentException {
+        if (elements == null || target == null) {
+            throw new IllegalArgumentException("Array of elements or search target cannot be null");
+        }
     }
 }

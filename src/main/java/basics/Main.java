@@ -23,10 +23,11 @@ public class Main {
                 () -> System.out.println("Target not found.")
         );
 
-        Optional<List<Integer>> allIndexes = SimpleSearch.searchAll(names, searchValue);
-        allIndexes.ifPresentOrElse(
-                indexes -> System.out.println("All found at indexes: " + indexes),
-                () -> System.out.println("Target not found.")
-        );
+        List<Integer> allIndexes = SimpleSearch.searchAll(names, searchValue);
+        if (allIndexes.isEmpty()) {
+            System.out.println("Target not found.");
+        } else {
+            System.out.println("All found at indexes: " + allIndexes);
+        }
     }
 }
