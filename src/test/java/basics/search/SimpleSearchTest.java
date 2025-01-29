@@ -5,8 +5,8 @@ import org.junit.jupiter.api.Test;
 import java.util.List;
 import java.util.Optional;
 
-import static basics.search.SimpleSearch.searchAll;
-import static basics.search.SimpleSearch.searchFirst;
+import static basics.search.SimpleSearch.searchAllIndexes;
+import static basics.search.SimpleSearch.searchFirstIndex;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class SimpleSearchTest {
@@ -14,78 +14,78 @@ public class SimpleSearchTest {
         return new String[]{"apple", "banana", "cherry", "banana", "date"};
     }
 
-    /// searchFirst tests
+    /// searchFirstIndex tests
     @Test
-    void testSearchFirst_TargetExists() {
+    void testSearchFirstIndex_TargetExists() {
         String[] array = createTestArray();
-        Optional<Integer> result = searchFirst(array, "banana");
+        Optional<Integer> result = searchFirstIndex(array, "banana");
         assertTrue(result.isPresent());
         assertEquals(1, result.get());
     }
 
     @Test
-    void testSearchFirst_TargetDoesNotExist() {
+    void testSearchFirstIndex_TargetDoesNotExist() {
         String[] array = createTestArray();
-        Optional<Integer> result = searchFirst(array, "whatever");
+        Optional<Integer> result = searchFirstIndex(array, "whatever");
         assertTrue(result.isEmpty());
     }
 
     @Test
-    void testSearchFirst_ArrayIsNull() {
-        assertThrows(IllegalArgumentException.class, () -> searchFirst(null, "Whatever"));
+    void testSearchFirstIndex_ArrayIsNull() {
+        assertThrows(IllegalArgumentException.class, () -> searchFirstIndex(null, "Whatever"));
     }
 
     @Test
-    void testSearchFirst_ArrayIsEmpty() {
+    void testSearchFirstIndex_ArrayIsEmpty() {
         String[] array = {};
-        Optional<Integer> result = searchFirst(array, "whatever");
+        Optional<Integer> result = searchFirstIndex(array, "whatever");
         assertTrue(result.isEmpty());
     }
 
     @Test
-    void testSearchFirst_TargetIsNull() {
+    void testSearchFirstIndex_TargetIsNull() {
         String[] array = createTestArray();
-        assertThrows(IllegalArgumentException.class, () -> searchFirst(array, null));
+        assertThrows(IllegalArgumentException.class, () -> searchFirstIndex(array, null));
     }
 
-    /// searchAll tests
+    /// searchAllIndexes tests
     @Test
-    void testSearchAll_OneTargetExists() {
+    void testSearchAllIndexes_OneTargetExists() {
         String[] array = createTestArray();
-        List<Integer> result = searchAll(array, "date");
+        List<Integer> result = searchAllIndexes(array, "date");
         assertEquals(List.of(4), result);
     }
 
     @Test
-    void testSearchAll_MultipleTargetExists() {
+    void testSearchAllIndexes_MultipleTargetExists() {
         String[] array = createTestArray();
-        List<Integer> result = searchAll(array, "banana");
+        List<Integer> result = searchAllIndexes(array, "banana");
         assertEquals(2, result.size());
         assertEquals(List.of(1, 3), result);
     }
 
     @Test
-    void testSearchAll_TargetDoesNotExists() {
+    void testSearchAllIndexes_TargetDoesNotExists() {
         String[] array = createTestArray();
-        List<Integer> result = searchAll(array, "Whatever");
+        List<Integer> result = searchAllIndexes(array, "Whatever");
         assertTrue(result.isEmpty());
     }
 
     @Test
-    void testSearchAll_ArrayIsNull() {
-        assertThrows(IllegalArgumentException.class, () -> searchAll(null, "Whatever"));
+    void testSearchAllIndexes_ArrayIsNull() {
+        assertThrows(IllegalArgumentException.class, () -> searchAllIndexes(null, "Whatever"));
     }
 
     @Test
-    void testSearchAll_ArrayIsEmpty() {
+    void testSearchAllIndexes_ArrayIsEmpty() {
         String[] array = {};
-        List<Integer> result = searchAll(array, "Whatever");
+        List<Integer> result = searchAllIndexes(array, "Whatever");
         assertTrue(result.isEmpty());
     }
 
     @Test
-    void testSearchAll_TargetIsNull() {
+    void testSearchAllIndexes_TargetIsNull() {
         String[] array = createTestArray();
-        assertThrows(IllegalArgumentException.class, () -> searchAll(array, null));
+        assertThrows(IllegalArgumentException.class, () -> searchAllIndexes(array, null));
     }
 }

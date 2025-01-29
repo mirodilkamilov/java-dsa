@@ -17,13 +17,13 @@ public class Main {
         }
         String searchValue = "Alex";
 
-        Optional<Integer> firstIndex = SimpleSearch.searchFirst(names, searchValue);
+        Optional<Integer> firstIndex = SimpleSearch.searchFirstIndex(names, searchValue);
         firstIndex.ifPresentOrElse(
                 index -> System.out.println("First found at index: " + index),
                 () -> System.out.println("Target not found.")
         );
 
-        List<Integer> allIndexes = SimpleSearch.searchAll(names, searchValue);
+        List<Integer> allIndexes = SimpleSearch.searchAllIndexes(names, searchValue);
         if (allIndexes.isEmpty()) {
             System.out.println("Target not found.");
         } else {

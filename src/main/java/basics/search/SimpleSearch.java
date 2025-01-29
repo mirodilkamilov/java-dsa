@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Optional;
 
 public class SimpleSearch {
-    public static Optional<Integer> searchFirst(String[] elements, String target) {
+    public static Optional<Integer> searchFirstIndex(String[] elements, String target) {
         validateInput(elements, target);
 
         for (int i = 0; i < elements.length; i++) {
@@ -20,7 +20,7 @@ public class SimpleSearch {
         return Optional.empty();
     }
 
-    public static List<Integer> searchAll(String[] elements, String target) {
+    public static List<Integer> searchAllIndexes(String[] elements, String target) {
         validateInput(elements, target);
 
         List<Integer> foundIndexes = new ArrayList<>();
