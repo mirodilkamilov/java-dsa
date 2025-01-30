@@ -1,8 +1,8 @@
-package basics.search;
+package dev.mirodil.java_dsa.basics.search;
 
 import java.util.Optional;
 
-import static basics.search.SearchAlgorithmUtil.validateInput;
+import static dev.mirodil.java_dsa.basics.search.SearchAlgorithmUtil.validateInput;
 
 public class BinarySearch {
     public static Optional<Integer> searchFirstIndex(String[] sortedArray, String target) {

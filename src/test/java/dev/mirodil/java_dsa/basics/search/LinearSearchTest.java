@@ -1,11 +1,11 @@
-package basics.search;
+package dev.mirodil.java_dsa.basics.search;
 
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
 import java.util.Optional;
 
-import static basics.search.LinearSearch.searchAllIndexes;
+import static dev.mirodil.java_dsa.basics.search.LinearSearch.searchAllIndexes;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class LinearSearchTest extends BaseSearchTest {

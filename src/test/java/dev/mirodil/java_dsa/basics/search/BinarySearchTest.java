@@ -1,4 +1,4 @@
-package basics.search;
+package dev.mirodil.java_dsa.basics.search;
 
 import org.junit.jupiter.api.Test;
 

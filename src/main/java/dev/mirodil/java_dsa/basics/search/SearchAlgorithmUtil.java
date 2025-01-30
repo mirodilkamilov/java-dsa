@@ -1,4 +1,4 @@
-package basics.search;
+package dev.mirodil.java_dsa.basics.search;
 
 public class SearchAlgorithmUtil {
     static void validateInput(String[] array, String target) throws IllegalArgumentException {

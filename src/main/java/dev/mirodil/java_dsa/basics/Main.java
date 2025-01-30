@@ -1,8 +1,8 @@
-package basics;
+package dev.mirodil.java_dsa.basics;
 
-import basics.search.BinarySearch;
-import basics.search.LinearSearch;
 import com.github.javafaker.Faker;
+import dev.mirodil.java_dsa.basics.search.BinarySearch;
+import dev.mirodil.java_dsa.basics.search.LinearSearch;
 
 import java.util.Arrays;
 import java.util.List;
