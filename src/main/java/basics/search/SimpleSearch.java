@@ -4,32 +4,34 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public class SimpleSearch {
-    public static Optional<Integer> searchFirstIndex(String[] elements, String target) {
-        validateInput(elements, target);
+import static basics.search.SearchAlgorithmUtil.validateInput;
 
-        for (int i = 0; i < elements.length; i++) {
-            if (elements[i] == null) {
+public class SimpleSearch {
+    public static Optional<Integer> searchFirstIndex(String[] array, String target) {
+        validateInput(array, target);
+
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == null) {
                 continue;
             }
 
-            if (elements[i].equals(target)) {
+            if (array[i].equals(target)) {
                 return Optional.of(i);
             }
         }
         return Optional.empty();
     }
 
-    public static List<Integer> searchAllIndexes(String[] elements, String target) {
-        validateInput(elements, target);
+    public static List<Integer> searchAllIndexes(String[] array, String target) {
+        validateInput(array, target);
 
         List<Integer> foundIndexes = new ArrayList<>();
-        for (int i = 0; i < elements.length; i++) {
-            if (elements[i] == null) {
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == null) {
                 continue;
             }
 
-            if (elements[i].equals(target)) {
+            if (array[i].equals(target)) {
                 foundIndexes.add(i);
             }
         }
@@ -39,11 +41,5 @@ public class SimpleSearch {
         }
 
         return foundIndexes;
-    }
-
-    private static void validateInput(String[] elements, String target) throws IllegalArgumentException {
-        if (elements == null || target == null) {
-            throw new IllegalArgumentException("Array of elements or search target cannot be null");
-        }
     }
 }
