@@ -5,13 +5,13 @@ import org.junit.jupiter.api.Test;
 import java.util.List;
 import java.util.Optional;
 
-import static basics.search.SimpleSearch.searchAllIndexes;
+import static basics.search.LinearSearch.searchAllIndexes;
 import static org.junit.jupiter.api.Assertions.*;
 
-public class SimpleSearchTest extends BaseSearchTest {
+public class LinearSearchTest extends BaseSearchTest {
     @Override
     protected Optional<Integer> searchFirstIndex(String[] array, String target) {
-        return SimpleSearch.searchFirstIndex(array, target);
+        return LinearSearch.searchFirstIndex(array, target);
     }
 
 //    "apple", "banana", "cherry", "clementine", "date", "date"

@@ -6,7 +6,7 @@ import java.util.Optional;
 
 import static basics.search.SearchAlgorithmUtil.validateInput;
 
-public class SimpleSearch {
+public class LinearSearch {
     public static Optional<Integer> searchFirstIndex(String[] array, String target) {
         validateInput(array, target);
 

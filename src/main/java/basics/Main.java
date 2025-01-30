@@ -1,7 +1,7 @@
 package basics;
 
 import basics.search.BinarySearch;
-import basics.search.SimpleSearch;
+import basics.search.LinearSearch;
 import com.github.javafaker.Faker;
 
 import java.util.Arrays;
@@ -18,17 +18,17 @@ public class Main {
             names[i] = faker.name().firstName();
         }
         String searchValue = "Alex";
-        Optional<Integer> firstIndex = SimpleSearch.searchFirstIndex(names, searchValue);
+        Optional<Integer> firstIndex = LinearSearch.searchFirstIndex(names, searchValue);
         firstIndex.ifPresentOrElse(
-                index -> System.out.println("SimpleSearch: First found at index: " + index),
-                () -> System.out.println("SimpleSearch: Target not found.")
+                index -> System.out.println("LinearSearch: First found at index: " + index),
+                () -> System.out.println("LinearSearch: Target not found.")
         );
 
-        List<Integer> allIndexes = SimpleSearch.searchAllIndexes(names, searchValue);
+        List<Integer> allIndexes = LinearSearch.searchAllIndexes(names, searchValue);
         if (allIndexes.isEmpty()) {
-            System.out.println("SimpleSearch: Target not found.");
+            System.out.println("LinearSearch: Target not found.");
         } else {
-            System.out.println("SimpleSearch: All found at indexes: " + allIndexes);
+            System.out.println("LinearSearch: All found at indexes: " + allIndexes);
         }
 
         Arrays.sort(names);
