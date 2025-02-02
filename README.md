@@ -1,4 +1,4 @@
-# Algorithms and Data Structures in Java
+# Data Structures and Algorithms in Java
 
 This repository is dedicated to my learning journey through Algorithms and Data Structures in Java. I'm currently
 learning from [Grokking Algorithms](https://www.manning.com/books/grokking-algorithms) by Aditya Y. Bhargava. As I learn

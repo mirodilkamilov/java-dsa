@@ -11,13 +11,13 @@ public class SortUtil {
         array[index2] = temp;
     }
 
-    public static void validateInput(String[] array) {
+    public static void validateInput(String[] array) throws IllegalArgumentException {
         if (array == null) {
             throw new IllegalArgumentException("Array cannot be null");
         }
     }
 
-    public static void validateInput(String[] array, String direction) {
+    public static void validateInput(String[] array, String direction) throws IllegalArgumentException {
         if (array == null || direction == null) {
             throw new IllegalArgumentException("Array or sort direction cannot be null");
         }
