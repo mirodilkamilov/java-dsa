@@ -3,6 +3,7 @@ package dev.mirodil.java_dsa.basics;
 import com.github.javafaker.Faker;
 import dev.mirodil.java_dsa.basics.search.BinarySearch;
 import dev.mirodil.java_dsa.basics.search.LinearSearch;
+import dev.mirodil.java_dsa.basics.sort.SelectionSort;
 
 import java.util.Arrays;
 import java.util.List;
@@ -31,8 +32,8 @@ public class Main {
             System.out.println("LinearSearch: All found at indexes: " + allIndexes);
         }
 
-        Arrays.sort(names);
-        System.out.println("Array of names is sorted");
+        SelectionSort.sort(names);
+        System.out.println("Array of names is sorted. First 10 elements: " + Arrays.stream(names).limit(10).toList());
 
         firstIndex = BinarySearch.searchFirstIndex(names, searchValue);
         firstIndex.ifPresentOrElse(
